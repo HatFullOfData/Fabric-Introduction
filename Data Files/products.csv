@@ -1,0 +1,23 @@
+ProductID,Product,Category,BasePrice
+21,Box of pencils,Stationery,2.5
+22,Box of black pens,Stationery,3.3
+23,Box of Blue pens,Stationery,3.4
+24,Whiteboard pens,Stationery,5
+25,Washing up liquid,Cleaning Materials,3
+26,Surface cleaner,Cleaning Materials,4
+27,Microfibre Cloths,Cleaning Materials,5.6
+28,Cleaning Roll,Cleaning Materials,4
+29,Sponges,Cleaning Materials,6
+30,White A4 Paper ream,Stationery,9.9
+31,White A3 Paper Ream,Stationery,12.5
+32,Unbleached A4 Paper Ream,Stationery,9
+33,Straight Desk,Furniture,120
+34,Corner Desk,Furniture,150
+35,Executive Desk,Furniture,210
+36,Standard Chair,Furniture,60
+37,Delux Chaire,Furniture,75
+38,Executive Chair,Furniture,95
+39,Standard Cupboard,Furniture,120
+40,Bookcase Unit,Furniture,100
+41,B10 Lightbulb,Consumables,3
+42,B16 Lightbulb,Consumables,4
