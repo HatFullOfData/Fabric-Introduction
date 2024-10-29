@@ -15,6 +15,7 @@ The introduction exercise we are going to work through is copying a file that co
 * [Add Notebook or Dataflow Activity](#next-activity)
 * [Run complete pipeline](#run-the-data-pipeline)
 * [Schedule the pipeline](#schedule-pipeline-runs)
+* [Handle Errors](#adding-error-notification)
 
 ## Create Pipeline
 
@@ -35,7 +36,7 @@ From the home ribbon click on Copy data and select Use copy assistant. In the se
 Enter in the url to the file we want to copy (see below). It will create a new connection. The Authentication can be anonymous so all the defaults can be left. Click next until you get a Preview data button. Click the button to confirm that you can see the contents of the csv. Then click Next
 
 ```
-https://raw.githubusercontent.com/Laura-GB/DemoData/main/Products.csv
+https://raw.githubusercontent.com/HatFullOfData/Demo/main/products.csv
 ```
 
 The next part of the wizard is to choose the destination for the file. In the next pane find your lakehouse in the OneLake data hub section and click on it. The next stage specifies where in the Lakehouse the file should go.
@@ -99,4 +100,43 @@ The reason pipelines are good for orchestration is you can connect tasks to happ
 ![Scheduling pane for a pipeline](<Images/Lab 02/2024-09-17_16-29-01.png>)
 
 On the home ribbon click Schedule. In the pane that appears on the right toggle the Scheduled run to On and then enter in the required details for the scheduling. Remember that pipeline runs will use capacity so make sure you need those runs to happen. When you have entered all the details click Apply. The top description will now update to show how long to the next refresh.
+
+## Adding Error Notification
+
+Now that the pipeline is scheduled, it will happen unsupervised. So what happens if the file is no longer available or the columns in the csv file change? One of the actions will fail. Best practice would be to have some sort of notification or logging.
+
+### Send a teams message
+
+Another activity available in data pipelines is MS Teams. Currently in preview as October 2024. This allows you to post to a group chat or channel.
+
+From the activities ribbon select Teams. This adds the activity to the pipeline layout. In the settings select where to post the message from the drop downs for Post in, Team and Channel etc.
+
+![the edit Teams action settings window with the dynamic content list](<Images/Lab 02/2024-10-28_13-15-58.png>)
+
+In the message you can add dynamic content from the list offered. You need to click OK to add the field. Be aware clicking OK does not clear the formula box.
+
+Link the Teams activity to the fail point on the copy data activity.
+
+![Three activities linked](<Images/Lab 02/2024-10-28_16-46-56.png>)
+
+### Add a link to the run
+
+A link to viewing the run details would be useful to include in the message sent in teams. Whilst in the data pipeline you click on View run history on the ribbon and then in the Recent runs list that appears you will get to view the pipeline run. The important part is the url that it links you to and building that in the teams message
+![Recent runs list and the run image with green ticks against the successful items](<Images/Lab 02/2024-10-28_12-55-36.png>)
+
+```
+https://app.powerbi.com/workloads/data-pipeline/artifactAuthor/workspaces/{WorkspaceID}/pipelines/{PipelineID}/{PipelineRunID}
+```
+
+We can calculate the above url using dynamic content and the Concat function. As we will potentially need it in multiple places we will create a variable.
+
+From the activities ribbon select Set Variable. Rename the activity on the general tab and connect it to happen before the copy data action. In the settings click New to add the new variable and type in PipelineRunURL and click OK.
+
+The just below the value box will be a link to add dynamic content and that will open the Pipeline expression builder. You can find concat under functions and the pipeline guids for workspace etc under System variables.
+
+![the steps to create and populate the variable](<Images/Lab 02/2024-10-28_17-44-33.png>)
+
+Back in the Teams activity we want to add the link
+
+
 
