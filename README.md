@@ -1,19 +1,5 @@
 # Fabric Introduction
 
-## DynUG 2024
-
-The userid for today's workshop is - alexw@M365x11056504.onmicrosoft.com
-Password will be given in the workshop
-
-## Code Line
-
-```
-df_clean.write.mode("overwrite").format("delta").option("overwriteSchema", "true").save("Tables/Customers")
-```
-
-## Dataverse Environment
-[https://make.powerapps.com/environments/25e50dcb-c6e8-e00d-bdaf-a7e5f363690b/entities](https://make.powerapps.com/environments/25e50dcb-c6e8-e00d-bdaf-a7e5f363690b/entities)
-
 ## Overview
 
 This hands on training session is to introduce the common elements of Microsoft Fabric. This is a starting point for exploring and the exercises will expand based upon the attendees abilities and interests
