@@ -205,7 +205,7 @@ Click the run button on this new code block to show the results.
 The final step of this notebook to write this data to a table. This is the one line of code you have to write
 
 ```
-df_clean.write.mode("overwrite").format("delta").option("overwriteSchema", "true").save("Tables/Finance_Customers")
+df_clean.write.mode("overwrite").format("delta").option("overwriteSchema", "true").save("Tables/dbo/Customers")
 ```
 
 The mode being overwrite and the option to overwrite the schema means that this notebook will overwrite anything already there. The delta format is the format for tables in Microsoft Fabric. The final part shows the path to the table.
