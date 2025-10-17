@@ -36,7 +36,7 @@ From the home ribbon click on Copy data and select Use copy assistant. In the se
 Enter in the url to the file we want to copy (see below). It will create a new connection. The Authentication can be anonymous so all the defaults can be left. Click next until you get a Preview data button. Click the button to confirm that you can see the contents of the csv. Then click Next
 
 ```
-https://raw.githubusercontent.com/HatFullOfData/Demo/main/products.csv
+https://github.com/HatFullOfData/Demo/blob/main/Products.csv
 ```
 
 The next part of the wizard is to choose the destination for the file. In the next pane find your lakehouse in the OneLake data hub section and click on it. The next stage specifies where in the Lakehouse the file should go.
