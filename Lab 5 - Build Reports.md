@@ -16,8 +16,6 @@ Microsoft Fabric of course includes reports. This workshop is not to teach Power
 
 ## Create New Semantic Model
 
-Every Lakehouse has a default semantic model. This includes all the tables plus some extra tables that you would not expect or want in your reports. So it has become best practice to create a new semantic model.
-
 In the Lakehouse select New semantic model from the home ribbon. Enter in a name for the model and select the workspace it will be in. It can be in a different workspace than the Lakehouse. Select the tables to include in the model and click confirm.
 
 ![New semantic model pane](<Images/Lab 03/2024-09-17_16-59-19.png>)
